@@ -1,8 +1,7 @@
-
-from flask import Blueprint, render_template, url_for
+from flask import Blueprint, render_template, url_for, redirect
 
 pages = Blueprint('pages', __name__)
 
 @pages.route('/')
-def root(http_code):
-    return render_template('base.html')
+def root():
+    return redirect(url_for('msip.root'))

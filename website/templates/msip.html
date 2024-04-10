@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <h1>Service Tag IP Checker</h1>
+  <form id="ipForm" action="{{ url_for('msip.root') }}" method="post">
+    <div class="form-group">
+      <label for="ips">Enter IP addresses (one per line):</label>
+      <textarea class="form-control" id="ips" name="ips" rows="10"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Check IPs</button>
+  </form>
+  {% if results %}
+  <div class="mt-5">
+    <h3>Results:</h3>
+    <ul>
+      {% for result in results %}
+      <li>
+        {% if result.error %} {{ result.ip }} -
+        <strong>{{ result.error }}</strong> {% else %} {{ result.ip }} -
+        <strong>{{ result.name }}</strong> in {{ result.file }} {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</div>
+<script>
+  document.getElementById("ips").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && e.ctrlKey) {
+      document.getElementById("ipForm").submit();
+    }
+  });
+</script>
+{% endblock %}

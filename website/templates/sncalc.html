@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <h1>Subnet Calculator</h1>
+  <form action="{{ url_for('sncalc.root') }}" method="post">
+    <div class="form-group">
+      <label for="cidr">Enter CIDR:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cidr"
+        name="cidr"
+        placeholder="192.168.0.0/24"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Calculate</button>
+  </form>
+  {% if network_id %}
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-sm-2 text-end fw-bold">Network ID:</div>
+      <div class="col-sm-10">{{ network_id }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 text-end fw-bold">Subnet Mask:</div>
+      <div class="col-sm-10">{{ subnet_mask }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 text-end fw-bold">First Usable IP:</div>
+      <div class="col-sm-10">{{ first_usable_ip }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 text-end fw-bold">Last Usable IP:</div>
+      <div class="col-sm-10">{{ last_usable_ip }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 text-end fw-bold">Broadcast IP:</div>
+      <div class="col-sm-10">{{ broadcast_ip }}</div>
+    </div>
+  </div>
+  {% elif error %}
+  <div class="alert alert-danger mt-3" role="alert">{{ error }}</div>
+  {% endif %}
+</div>
+{% endblock %}
