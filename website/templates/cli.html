@@ -1,0 +1,101 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-3">
+  <div class="mb-3">
+    <button
+      class="btn btn-info"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#helpText"
+      aria-expanded="false"
+      aria-controls="helpText"
+    >
+      Help
+    </button>
+    <div class="collapse" id="helpText">
+      <div class="card card-body">{{ help_text }}</div>
+    </div>
+  </div>
+
+  <form action="{{ url_for('cli.root') }}" method="post">
+    <div class="mb-3">
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Basic radio toggle button group"
+      >
+        <input
+          type="radio"
+          class="btn-check"
+          name="os_type"
+          id="linux"
+          autocomplete="off"
+          checked
+        />
+        <label class="btn btn-outline-primary" for="linux">Linux</label>
+
+        <input
+          type="radio"
+          class="btn-check"
+          name="os_type"
+          id="windows"
+          autocomplete="off"
+        />
+        <label class="btn btn-outline-primary" for="windows">Windows</label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div
+        id="shell-options"
+        class="btn-group"
+        role="group"
+        aria-label="Basic radio toggle button group"
+      >
+        <input
+          type="radio"
+          class="btn-check"
+          name="shell_type"
+          id="bash"
+          autocomplete="off"
+          checked
+        />
+        <label class="btn btn-outline-primary" for="Bash">Bash</label>
+
+        <input
+          type="radio"
+          class="btn-check"
+          name="shell_type"
+          id="Shell"
+          autocomplete="off"
+        />
+        <label class="btn btn-outline-primary" for="Shell">Shell</label>
+        <input
+          type="radio"
+          class="btn-check"
+          name="shell_type"
+          id="PowerShell"
+          autocomplete="off"
+        />
+        <label class="btn btn-outline-primary" for="PowerShell"
+          >PowerShell</label
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="user_input" class="form-label">Your input:</label>
+      <textarea
+        id="user_input"
+        name="user_input"
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  {% if response_text %}
+  <pre class="mt-3">{{ response_text }}</pre>
+  {% endif %}
+</div>
+{% endblock %}
