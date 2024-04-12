@@ -1,5 +1,5 @@
-help_text: >
-  This is the help section. You can ask questions like:
-  - How do I list all files in a directory?
+cli_help_text: >
+  This is the help section. You can ask questions like:\n
+  - How do I list all files in a directory?\n
   - How do I check the disk usage in Linux?
   - How can I find the process using a specific port?
