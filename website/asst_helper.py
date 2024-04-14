@@ -1,5 +1,6 @@
 import openai
 from time import sleep
+from . import client
 
 
 def wait_for_run(
@@ -33,14 +34,12 @@ def wait_for_run(
 
 
 def get_response(
-    client : openai.OpenAI, 
     asst_id : str, 
     user_msg : str) -> str:
     """
     Creates a thread, sends a message, and retrieves the response from the OpenAI assistant.
     
     Args:
-    client (openai.OpenAI): The OpenAI client instance.
     asst_id (str): The assistant ID to use for generating the response.
     user_msg (str): The user message to send to the assistant.
 

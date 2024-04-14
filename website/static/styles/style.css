@@ -1,0 +1,14 @@
+textarea#floatingTextarea {
+  resize: none;
+  height: 200px;
+}
+
+textarea#email-helpers-input {
+  resize: none;
+  height: 600px;
+}
+
+div#email-helpers-output {
+  height: 567px;
+  overflow: auto;
+}

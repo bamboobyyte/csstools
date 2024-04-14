@@ -1,5 +1,17 @@
+msip_help_text: >
+  How to use section for IsThisMsIP
+
+sncalc_help_text: >
+  How to use section for IsThisMsIP
+
 cli_help_text: >
-  This is the help section. You can ask questions like:\n
-  - How do I list all files in a directory?\n
+  This is the help section. You can ask questions like:
+  - How do I list all files in a directory?
   - How do I check the disk usage in Linux?
   - How can I find the process using a specific port?
+
+email_fqr: >
+  How to use section for fqr
+
+email_meeting: >
+  How to use section for meeting

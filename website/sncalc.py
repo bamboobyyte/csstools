@@ -15,9 +15,19 @@ def root():
             last_usable_ip = network.broadcast_address - 1 if network.num_addresses > 2 else network.broadcast_address
             broadcast_ip = network.broadcast_address
 
-            return render_template('sncalc.html', cidr=cidr, network_id=network_id, subnet_mask=subnet_mask,
-                                   first_usable_ip=first_usable_ip, last_usable_ip=last_usable_ip, broadcast_ip=broadcast_ip)
+            return render_template(
+                'sncalc.html', 
+                title='Subnet Calculator', 
+                cidr=cidr, 
+                network_id=network_id, 
+                subnet_mask=subnet_mask,
+                first_usable_ip=first_usable_ip, 
+                last_usable_ip=last_usable_ip, 
+                broadcast_ip=broadcast_ip)
         except ValueError:
             error_message = "Invalid CIDR notation"
-            return render_template('sncalc.html', error=error_message)
-    return render_template('sncalc.html')
+            return render_template(
+                'sncalc.html', 
+                title='Subnet Calculator', 
+                error=error_message)
+    return render_template('sncalc.html', title='Subnet Calculator')

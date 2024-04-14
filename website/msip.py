@@ -48,6 +48,7 @@ def find_ip_in_service_tags(ip_address):
 
 @msip.route('/isthismsip', methods=['GET', 'POST'])
 def root():
+    title = 'Is This a Microsoft IP?'
     if request.method == 'POST':
         ips_text = request.form['ips']
         ips = ips_text.strip().splitlines()
@@ -55,5 +56,11 @@ def root():
         for ip in ips:
             results = find_ip_in_service_tags(ip)
             all_results.extend(results)
-        return render_template('msip.html', results=all_results)
-    return render_template('msip.html')
+        return render_template(
+            'msip.html', 
+            title=title, 
+            results=all_results)
+    
+    return render_template(
+        'msip.html', 
+        title=title)

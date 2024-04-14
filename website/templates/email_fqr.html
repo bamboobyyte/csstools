@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-3">
+  <div class="container p-0">
+    <div class="row">
+      <div class="col">
+        <form id="userInput" action="" method="post">
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="email-helpers-input"
+            ></textarea>
+            <label for="email-helpers-input">Enter Case Statement Here:</label>
+          </div>
+          <button type="submit" class="btn btn-primary mt-1">
+            Get the FQR
+          </button>
+        </form>
+      </div>
+      <div class="col">
+        <div class="bg-dark-subtle rounded-top" id="code-area-top">
+          <p class="m-0 ps-3 py-1 text-dark" id="code-area-text">
+            GPT Response:
+          </p>
+        </div>
+        <div class="bg-dark m-0 p-0 rounded-bottom" id="email-helpers-output">
+          <div class="p-2">
+            {% for line in response.splitlines()%}
+            <p class="text-white m-0 p-0">{{line}}</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document
+    .getElementById("email-helpers-input")
+    .addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && e.ctrlKey) {
+        document.getElementById("ipForm").submit();
+      }
+    });
+</script>
+{% endblock %}

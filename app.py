@@ -2,4 +2,4 @@ from website import init_app
 
 if __name__ == '__main__':
     app = init_app()
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, threaded=True, host='0.0.0.0')
