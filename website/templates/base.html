@@ -118,7 +118,13 @@
             class="accordion-collapse collapse collapsed"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">{{help_text}}</div>
+            <div class="accordion-body">
+              {{help_text}} {% if how_to %}
+              <h5 class="mt-1">How to use:</h5>
+              {{ how_to }} {% endif %} {% if important %}
+              <h5 class="mt-1">Important:</h5>
+              {{ important }} {% endif %}
+            </div>
           </div>
         </div>
       </div>

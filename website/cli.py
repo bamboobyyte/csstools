@@ -7,17 +7,19 @@ cli = Blueprint('cli', __name__)
 
 @cli.route('/cli', methods=['GET', 'POST'])
 def root():
+    kwargs = {
+        'title': 'CL Guru',
+        'help_text': help_text['cli_help_text'],
+        'how_to': help_text['cli_how_to']
+    }
     if request.method == 'POST':
         user_input = request.form['user_input']
         response = get_response(asst_id=asst_cli_id, user_msg=user_input)
         return render_template(
             'cli.html',
-            title='CL Guru',
-            help_text=help_text['cli_help_text'], 
             response=response, 
+            **kwarg
             )
 
     return render_template(
-        'cli.html', 
-        title='CL Guru', 
-        help_text=help_text['cli_help_text'])
+        'cli.html', **kwargs)

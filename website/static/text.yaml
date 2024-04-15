@@ -10,6 +10,9 @@ cli_help_text: >
   - How do I check the disk usage in Linux?
   - How can I find the process using a specific port?
 
+cli_how_to: >
+  Enter a scenario.
+
 email_polisher: >
   How to use section for polisher
 
