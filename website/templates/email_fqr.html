@@ -3,21 +3,6 @@
   <div class="container p-0">
     <div class="row">
       <div class="col">
-        <form id="userInput" action="" method="post">
-          <div class="form-floating">
-            <textarea
-              class="form-control"
-              placeholder="Leave a comment here"
-              id="email-helpers-input"
-            ></textarea>
-            <label for="email-helpers-input">Enter Case Statement Here:</label>
-          </div>
-          <button type="submit" class="btn btn-primary mt-1">
-            Get the FQR
-          </button>
-        </form>
-      </div>
-      <div class="col">
         <div class="bg-dark-subtle rounded-top" id="code-area-top">
           <p class="m-0 ps-3 py-1 text-dark" id="code-area-text">
             GPT Response:
@@ -30,6 +15,21 @@
             {% endfor %}
           </div>
         </div>
+      </div>
+      <div class="col">
+        <form id="userInput" action="" method="post">
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="email-helpers-input"
+            ></textarea>
+            <label for="email-helpers-input">Enter Case Statement Here:</label>
+          </div>
+          <button type="submit" class="btn btn-primary mt-1 float-end">
+            Get the FQR
+          </button>
+        </form>
       </div>
     </div>
   </div>
