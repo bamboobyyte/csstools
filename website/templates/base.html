@@ -63,6 +63,13 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('email.polisher') }}"
+                    >Polisher</a
+                  >
+                </li>
+                <li>
                   <a class="dropdown-item" href="{{ url_for('email.fqr') }}"
                     >FQR Helper</a
                   >
@@ -73,7 +80,11 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('email.softskillmaster') }}"
+                    >Soft Skill Master</a
+                  >
                 </li>
               </ul>
             </li>
@@ -88,7 +99,7 @@
     <div class="container mt-5">
       <h1>{{ title }}</h1>
       {% if help_text %}
-      <div class="accordion" id="accordionExample">
+      <div class="accordion mt-2" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
@@ -99,7 +110,7 @@
               aria-expanded="false"
               aria-controls="collapse"
             >
-              How to use
+              About This Tool
             </button>
           </h2>
           <div
@@ -107,7 +118,7 @@
             class="accordion-collapse collapse collapsed"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">{{ help_text }}</div>
+            <div class="accordion-body">{{help_text}}</div>
           </div>
         </div>
       </div>

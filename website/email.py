@@ -1,25 +1,67 @@
 from flask import Blueprint, request, render_template, url_for, redirect
 from openai import OpenAI
 from .asst_helper import get_response
-from . import asst_cli_id, help_text
+from . import asst_email_polisher_id, asst_email_fqr_id, asst_email_meeting_id, asst_email_soft_id, help_text
 
 email = Blueprint('email', __name__)
 
+@email.route('/email/polisher', methods=['GET', 'POST'])
+def polisher():
+    kwargs = {
+        'title': 'Sentences Polisher',
+        'help_text': help_text['email_polisher'],
+        'input_area_text': 'Enter Sentences Needs Paraphrase Here:',
+        'button_name': 'Polish',
+    }
+    if request.method == 'POST':
+        user_input = request.form['user_input']
+        response=get_response(asst_id=asst_email_polisher_id, user_msg=user_input)
+        return render_template('email_base.html', response=response, user_inputed=user_input, **kwargs)
+    
+    return render_template('email_base.html', **kwargs)
+
 @email.route('/email/fqr', methods=['GET', 'POST'])
 def fqr():
-    response='''
-    Simple
-    output
-    from OpenAI
+    kwargs = {
+        'title': 'FQR Helper',
+        'help_text': help_text['email_fqr'],
+        'input_area_text': 'Enter Case Statement Here:',
+        'button_name': 'Get the FQR',
+    }
+    input_area_text = 'Enter Case Statement Here:'
+    if request.method == 'POST':
+        user_input = request.form['user_input']
+        response=get_response(asst_id=asst_email_fqr_id, user_msg=user_input)
+        return render_template('email_base.html', response=response, user_inputed=user_input, **kwargs)
     
-    
-    '''
-    return render_template(
-        'email_fqr.html',
-        help_text=help_text['email_fqr'],
-        response=response)
+    return render_template('email_base.html', **kwargs)
 
 @email.route('/email/meeting', methods=['GET', 'POST'])
 def meeting():
-    return render_template(
-        'dev.html')
+    kwargs = {
+        'title': 'Meeting Summary Helper',
+        'help_text': help_text['email_meeting'],
+        'input_area_text': 'Enter Meeting Notes Here:',
+        'button_name': 'Get the summary email',
+    }
+    if request.method == 'POST':
+        user_input = request.form['user_input']
+        response=get_response(asst_id=asst_email_meeting_id, user_msg=user_input)
+        return render_template('email_base.html', response=response, user_inputed=user_input, **kwargs)
+    
+    return render_template('email_base.html', **kwargs)
+
+@email.route('/email/softskillmaster', methods=['GET', 'POST'])
+def softskillmaster():
+    kwargs = {
+        'title': 'Soft Skill Master',
+        'help_text': help_text['email_softskillmaster'],
+        'input_area_text': 'Enter Detailed Scenario Here:',
+        'button_name': 'Soft it',
+    }
+    if request.method == 'POST':
+        user_input = request.form['user_input']
+        response=get_response(asst_id=asst_email_soft_id, user_msg=user_input)
+        return render_template('email_base.html', response=response, user_inputed=user_input, **kwargs)
+    
+    return render_template('email_base.html', **kwargs)

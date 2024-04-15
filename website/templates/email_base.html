@@ -10,9 +10,9 @@
         </div>
         <div class="bg-dark m-0 p-0 rounded-bottom" id="email-helpers-output">
           <div class="p-2">
-            {% for line in response.splitlines()%}
+            {% if response: %} {% for line in response.splitlines()%}
             <p class="text-white m-0 p-0">{{line}}</p>
-            {% endfor %}
+            {% endfor %} {% endif %}
           </div>
         </div>
       </div>
@@ -22,12 +22,16 @@
             <textarea
               class="form-control"
               placeholder="Leave a comment here"
+              name="user_input"
               id="email-helpers-input"
-            ></textarea>
-            <label for="email-helpers-input">Enter Case Statement Here:</label>
+              required
+            >
+{%if user_inputed: %}{{user_inputed}}{% endif %}</textarea
+            >
+            <label for="email-helpers-input">{{ input_area_text }}</label>
           </div>
           <button type="submit" class="btn btn-primary mt-1 float-end">
-            Get the FQR
+            {{ button_name }}
           </button>
         </form>
       </div>
@@ -39,7 +43,7 @@
     .getElementById("email-helpers-input")
     .addEventListener("keydown", function (e) {
       if (e.key === "Enter" && e.ctrlKey) {
-        document.getElementById("ipForm").submit();
+        document.getElementById("userInput").submit();
       }
     });
 </script>

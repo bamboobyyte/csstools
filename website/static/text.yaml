@@ -10,8 +10,16 @@ cli_help_text: >
   - How do I check the disk usage in Linux?
   - How can I find the process using a specific port?
 
+email_polisher: >
+  How to use section for polisher
+
 email_fqr: >
   How to use section for fqr
+  line 1
+  line 2
 
 email_meeting: >
   How to use section for meeting
+
+email_softskillmaster: >
+  How to use section for Soft Skill Master

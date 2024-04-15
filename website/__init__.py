@@ -9,6 +9,14 @@ def init_app():
     load_dotenv()
     global asst_cli_id
     asst_cli_id = getenv('ASST_CLI_ID')
+    global asst_email_polisher_id
+    asst_email_polisher_id = getenv('ASST_EMAIL_POLISHER_ID')
+    global asst_email_fqr_id
+    asst_email_fqr_id = getenv('ASST_EMAIL_FQR_ID')
+    global asst_email_meeting_id
+    asst_email_meeting_id = getenv('ASST_EMAIL_MEETING_ID')
+    global asst_email_soft_id
+    asst_email_soft_id = getenv('ASST_EMAIL_SOFT_ID')
 
     # Crerate OpenAI client
     openai_api_key = getenv('OPENAI_API_KEY')
