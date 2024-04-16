@@ -96,10 +96,10 @@
       </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-3">
       <h1>{{ title }}</h1>
       {% if help_text %}
-      <div class="accordion mt-2" id="accordionExample">
+      <div class="accordion mt-3" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
@@ -110,7 +110,7 @@
               aria-expanded="false"
               aria-controls="collapse"
             >
-              About This Tool
+              <b class="m-0 p-0">About This Tool</b>
             </button>
           </h2>
           <div
@@ -119,11 +119,17 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              {{help_text}} {% if how_to %}
-              <h5 class="mt-1">How to use:</h5>
-              {{ how_to }} {% endif %} {% if important %}
-              <h5 class="mt-1">Important:</h5>
-              {{ important }} {% endif %}
+              <p class="mt-1 p-0 fs-6">{{help_text}}</p>
+              {% if how_to %}
+              <b class="">How to use:</b>
+              <p class="mt-1 p-0 fs-6">{{ how_to }}</p>
+              {% endif %} {% if example %}
+              <b class="mt-1">Example:</b>
+              <p class="mt-1 p-0 fs-6">{{ example }}</p>
+              {% endif %} {% if important %}
+              <b class="mt-1 text-danger">Important:</b>
+              <p class="mt-1 p-0 fs-6">{{ important }}</p>
+              {% endif %}
             </div>
           </div>
         </div>

@@ -10,7 +10,8 @@ def root():
     kwargs = {
         'title': 'CL Guru',
         'help_text': help_text['cli_help_text'],
-        'how_to': help_text['cli_how_to']
+        'how_to': help_text['cli_how_to'],
+        'example': help_text['cli_example']
     }
     if request.method == 'POST':
         user_input = request.form['user_input']

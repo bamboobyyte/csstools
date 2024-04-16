@@ -10,6 +10,7 @@ def polisher():
     kwargs = {
         'title': 'Sentences Polisher',
         'help_text': help_text['email_polisher'],
+        'important': help_text['email_important'],
         'input_area_text': 'Enter Sentences Needs Paraphrase Here:',
         'button_name': 'Polish',
     }
@@ -25,6 +26,9 @@ def fqr():
     kwargs = {
         'title': 'FQR Helper',
         'help_text': help_text['email_fqr'],
+        'how_to': help_text['email_fqr_how_to'],
+        'example': help_text['email_fqr_example'],
+        'important': help_text['email_important'],
         'input_area_text': 'Enter Case Statement Here:',
         'button_name': 'Get the FQR',
     }
@@ -41,6 +45,8 @@ def meeting():
     kwargs = {
         'title': 'Meeting Summary Helper',
         'help_text': help_text['email_meeting'],
+        'example': help_text['email_meeting_example'],
+        'important': help_text['email_important'],
         'input_area_text': 'Enter Meeting Notes Here:',
         'button_name': 'Get the summary email',
     }
@@ -56,6 +62,9 @@ def softskillmaster():
     kwargs = {
         'title': 'Soft Skill Master',
         'help_text': help_text['email_softskillmaster'],
+        'how_to': help_text['email_softskillmaster_how_to'],
+        'example': help_text['email_softskillmaster_example'],
+        'important': help_text['email_important'],
         'input_area_text': 'Enter Detailed Scenario Here:',
         'button_name': 'Soft it',
     }

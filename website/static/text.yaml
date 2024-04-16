@@ -7,23 +7,55 @@ sncalc_help_text: >
 cli_help_text: >
   CL Guru is an innovative function designed to simplify the creation of command-line interface (CLI) commands. 
   By taking user inputs regarding their specific requirements, CL Guru intelligently generates precise CLI commands 
-  tailored to their needs,
+  tailored to their needs.
 
 cli_how_to: >
   To use CL Guru, simply input your detailed requirements into the text area. Specify the desired actions, 
   targets, and any specific parameters. CL Guru will process this information and provide you with the correct CLI 
   command ready to be executed in your terminal.
 
+cli_example: >
+  "I'm using Ubuntu and bash. I need to perform a packet capture, which is focus on IP 10.10.10.10 and port 443, 
+  after the capture, output it into capture.cap."
+
 email_polisher: >
-  How to use section for polisher
+  Polisher skillfully rewrites or paraphrases the text, ensuring that the original meaning is preserved while 
+  elevating the language and style.
 
 email_fqr: >
-  How to use section for fqr
-  line 1
-  line 2
+  FQR Helper is a dedicated function designed to assist in the preparation of FQR. It takes customer statements 
+  as input and efficiently summarizes these into an Issue section.
+
+email_fqr_how_to: >
+  Input the customer's statement directly into the text area. FQR Helper will then process this information and 
+  produce a well-defined summary that pinpoints the core issues, ready to be incorporated into the Issue section 
+  of an FQR. Please utilize <> to substitute any sensitive information.
+
+email_fqr_example: >
+  "I am currently managing three virtual machines within the same subnet: <VM_name1>, <VM_name2>, and <VM_name3>. 
+  Unfortunately, <VM_name1> is unable to establish an RDP connection, whereas <VM_name2> and <VM_name3> are functioning 
+  without any issues. I have thoroughly reviewed the NSG and the routing tables and have not identified any discrepancies 
+  that might explain this connectivity problem."
 
 email_meeting: >
-  How to use section for meeting
+  Meeting Summarizer is designed to streamline communication following remote meetings. By taking meeting 
+  notes as input, it automatically crafts concise and informative summary emails tailored for customers.
+
+email_meeting_example: >
+  Issue: xxxxxx Actions: 1.xxxxxx 2.xxxxxx Next: xxxxxx
 
 email_softskillmaster: >
-  How to use section for Soft Skill Master
+  Soft Skill Master is an advanced function designed to enhance communication with customers by applying 
+  key soft skills. Users provide a detailed scenario, and Soft Skill Master crafts a customer-ready email 
+  while also explaining the soft skills utilized in the response.
+
+email_softskillmaster_how_to: >
+  Enter the detailed scenario account of the current situation, outlining your actions so far and detailing 
+  any future plans and other details, in the text area.
+
+email_softskillmaster_example: >
+  Out team is under extremely heavy workload recently, I'll need extra time to investigate customer's issue.
+
+email_important: >
+  Please note that the text you provide will be transmitted directly to the OpenAI API. Ensure that it does not 
+  contain any sensitive information.
