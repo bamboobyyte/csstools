@@ -17,8 +17,9 @@ def root():
         response = get_response(asst_id=asst_cli_id, user_msg=user_input)
         return render_template(
             'cli.html',
-            response=response, 
-            **kwarg
+            response=response,
+            user_inputed=user_input,
+            **kwargs
             )
 
     return render_template(

@@ -24,7 +24,9 @@
         id="floatingTextarea"
         name="user_input"
         required
-      ></textarea>
+      >
+{%if user_inputed: %}{{user_inputed}}{% endif %}</textarea
+      >
       <label for="floatingTextarea">Descript what you need here:</label>
     </div>
     <button type="submit" class="btn btn-primary mt-1">Get the Command</button>

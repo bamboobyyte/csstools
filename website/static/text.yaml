@@ -5,13 +5,14 @@ sncalc_help_text: >
   How to use section for IsThisMsIP
 
 cli_help_text: >
-  This is the help section. You can ask questions like:
-  - How do I list all files in a directory?
-  - How do I check the disk usage in Linux?
-  - How can I find the process using a specific port?
+  CL Guru is an innovative function designed to simplify the creation of command-line interface (CLI) commands. 
+  By taking user inputs regarding their specific requirements, CL Guru intelligently generates precise CLI commands 
+  tailored to their needs,
 
 cli_how_to: >
-  Enter a scenario.
+  To use CL Guru, simply input your detailed requirements into the text area. Specify the desired actions, 
+  targets, and any specific parameters. CL Guru will process this information and provide you with the correct CLI 
+  command ready to be executed in your terminal.
 
 email_polisher: >
   How to use section for polisher
