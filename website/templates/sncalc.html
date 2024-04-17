@@ -1,15 +1,17 @@
 {% extends "base.html" %} {% block content %}
 <div class="container mt-3">
+  {% if error %}
+  <div class="alert alert-danger mt-3" role="alert">{{ error }}</div>
+  {% endif %}
   <form action="" method="post">
-    <div class="form-group">
-      <label for="cidr">Enter CIDR:</label>
+    <div class="form-floating">
       <input
-        type="text"
         class="form-control"
         id="cidr"
         name="cidr"
         placeholder="192.168.0.0/24"
       />
+      <label for="cidr">Enter CIDR (e.g. 192.168.0.0/24): </label>
     </div>
     <button type="submit" class="btn btn-primary mt-1">Calculate</button>
   </form>
@@ -36,8 +38,6 @@
       <div class="col-sm-10">{{ broadcast_ip }}</div>
     </div>
   </div>
-  {% elif error %}
-  <div class="alert alert-danger mt-3" role="alert">{{ error }}</div>
   {% endif %}
 </div>
 {% endblock %}
