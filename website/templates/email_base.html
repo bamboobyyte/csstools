@@ -9,15 +9,21 @@
           </p>
         </div>
         <div class="bg-dark m-0 p-0 rounded-bottom" id="email-helpers-output">
+          <div
+            class="spinner-border spinner-border-sm text-light m-1"
+            role="status"
+            style="display: none"
+            id="loadingSpinner"
+          ></div>
           <div class="p-2">
             {% if response: %} {% for line in response.splitlines()%}
-            <p class="text-white m-0 p-0">{{line}}</p>
+            <p class="text-white m-0 p-0" id="gpt-output">{{line}}</p>
             {% endfor %} {% endif %}
           </div>
         </div>
       </div>
       <div class="col">
-        <form id="userInput" action="" method="post">
+        <form id="user-input" action="" method="post">
           <div class="form-floating">
             <textarea
               class="form-control"
@@ -30,7 +36,11 @@
             >
             <label for="email-helpers-input">{{ input_area_text }}</label>
           </div>
-          <button type="submit" class="btn btn-primary mt-1 float-end">
+          <button
+            type="submit"
+            class="btn btn-primary mt-1 float-end"
+            id="submit-btn"
+          >
             {{ button_name }}
           </button>
         </form>
@@ -39,6 +49,12 @@
   </div>
 </div>
 <script>
+  const form = document.getElementById("user-input");
+  form.addEventListener("submit", function () {
+    document.getElementById("loadingSpinner").style.display = "block"; // Show the spinner
+    document.getElementById("submit-btn").disabled = true;
+    document.getElementById("gpt-output").innerHTML = "";
+  });
   document
     .getElementById("email-helpers-input")
     .addEventListener("keydown", function (e) {

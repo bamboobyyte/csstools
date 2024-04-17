@@ -1,44 +1,35 @@
 {% extends "base.html" %} {% block content %}
 <div class="container mt-3">
-  {% if response %}
   <div class="mt-3"></div>
   <div>
-    <div>
-      <div class="bg-dark-subtle rounded-top" id="code-area-top">
-        <p class="m-0 ps-3 py-1 text-dark" id="code-area-text">Commands:</p>
-      </div>
-      <div class="bg-dark rounded-bottom">
-        <p class="py-3 text-center text-white">{{ response }}</p>
-      </div>
+    {% if response %}
+    <div class="bg-dark-subtle rounded-top" id="code-area-top">
+      <p class="m-0 ps-3 py-1 text-dark" id="code-area-text">Commands:</p>
     </div>
+    <div class="bg-dark rounded-bottom">
+      <p class="py-3 text-center text-white" id="gpt-output">{{ response }}</p>
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
 
   <div class="container mt-3"></div>
 
-  <form id="userInput" action="" method="post">
+  <form id="user-input" action="" method="post">
     <div class="form-floating">
       <textarea
         class="form-control"
         placeholder="Leave a comment here"
-        id="floatingTextarea"
+        id="text-area-input"
         name="user_input"
         required
       >
 {%if user_inputed: %}{{user_inputed}}{% endif %}</textarea
       >
-      <label for="floatingTextarea">Describe what you need here:</label>
+      <label for="text-area-input">Describe what you need here:</label>
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Get the Command</button>
+    <button type="submit-btn" class="btn btn-primary mt-2" id="submit-btn">
+      <span role="status">Get the Command</span>
+    </button>
   </form>
 </div>
-<script>
-  document
-    .getElementById("floatingTextarea")
-    .addEventListener("keydown", function (e) {
-      if (e.key === "Enter" && e.ctrlKey) {
-        document.getElementById("userInput").submit();
-      }
-    });
-</script>
 {% endblock %}
