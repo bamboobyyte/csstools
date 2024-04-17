@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=root
 Group=root
-WorkingDirectory=/home/Panda/csstools
-Environment="PATH=/home/Panda/csstools/venv/bin"
-ExecStart=/home/Panda/csstools/venv/bin/python3 app.py
+WorkingDirectory=/path/to/csstools
+Environment="PATH=/path/to/venv/bin"
+ExecStart=/path/to/csstools/venv/bin/python3 app.py
 
 [Install]
 WantedBy=nulti-user.target
