@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.error("Caught an error:", error.message)
             }
             try {
-                document.getElementById("gpt-output").innerHTML = "";
+                // document.getElementById("gpt-output").innerHTML = "";
+                document.querySelectorAll("gpt-output").innerHTML = ""
             } catch (error) {
                 console.error("Caught an error:", error.message)
             }
@@ -23,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Caught an error:", error.message)
         }
         try {
-            document.getElementById("gpt-output").innerHTML = "";
+            // document.getElementById("gpt-output").innerHTML = "";
+            document.querySelectorAll("gpt-output").innerHTML = ""
         } catch (error) {
             console.error("Caught an error:", error.message)
         }
