@@ -1,0 +1,12 @@
+[Unit]
+Description=Flask Application for csstools
+After=network.target
+
+[Service]
+User=username
+Group=www-data
+WorkingDirectory=/path/to/your/flaskapp
+ExecStart=/path/to/your/venv/bin/python3 app.py
+
+[Install]
+WantedBy=multi-user.target
